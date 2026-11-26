@@ -1,0 +1,26 @@
+:root { --fond: #0b0a10; --panneau: #14121c; --bord: #2a2638; --texte: #ece9f5; --doux: #9a94ad; --rouge: #e5333f; --violet: #9b6bff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fond); color: var(--texte); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--violet); }
+.haut { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 16px; max-width: 960px; margin: 0 auto; }
+.haut nav { display: flex; gap: 16px; font-size: 14px; }
+.haut nav a { color: var(--doux); text-decoration: none; }
+.logo { text-decoration: none; color: var(--texte); }
+.logo span { display: inline-block; transform: skewX(-6deg); background: var(--rouge); color: #fff; font-weight: 900; letter-spacing: .2em; padding: 2px 8px; font-size: 14px; }
+.logo small { display: block; margin-top: 2px; font-size: 11px; letter-spacing: .3em; color: var(--doux); font-weight: 600; }
+main { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
+.hero { padding: 48px 0 32px; }
+.hero h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 0 0 16px; }
+.hero p { color: var(--doux); max-width: 680px; font-size: 18px; }
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.grille article, .encadre { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 18px; }
+.grille h2, .encadre h2 { font-size: 16px; margin: 0 0 6px; }
+.grille p, .encadre p { margin: 0; color: var(--doux); font-size: 14px; }
+.encadre { margin-top: 24px; border-color: rgba(155, 107, 255, .5); }
+.texte { max-width: 760px; }
+.texte h1 { font-size: 32px; margin: 32px 0 4px; }
+.texte h2 { font-size: 18px; margin: 28px 0 6px; }
+.texte p, .texte li { color: #cfcade; }
+.maj { color: var(--doux) !important; font-size: 14px; }
+code { background: var(--panneau); border: 1px solid var(--bord); border-radius: 4px; padding: 0 4px; font-size: 13px; }
+footer { border-top: 1px solid var(--bord); color: var(--doux); font-size: 13px; text-align: center; padding: 20px 16px; }
