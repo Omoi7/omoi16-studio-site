@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Connexion TikTok · Studio omoi16</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="haut">
+  <a class="logo" href="index.html"><span>OMOI16</span><small>STUDIO</small></a>
+</header>
+<main class="texte">
+  <h1>Connexion à TikTok</h1>
+  <p id="msg">Retour vers Studio omoi16…</p>
+</main>
+<script>
+  // Page de retour de Login Kit : renvoie le code d'autorisation au Studio, qui tourne sur l'ordinateur du créateur.
+  // Le code ne sert qu'une fois, pendant quelques minutes, et ne peut être échangé qu'avec la clé secrète de l'appli.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var ok = q.has("code") || q.has("error");
+    if (!ok) { document.getElementById("msg").textContent = "Aucune réponse de TikTok sur cette page."; return; }
+    location.replace("http://localhost:3000/api/tiktok/callback?" + q.toString());
+    setTimeout(function () {
+      document.getElementById("msg").textContent =
+        "Si rien ne se passe, vérifie que Studio omoi16 est bien lancé sur cet ordinateur.";
+    }, 4000);
+  })();
+</script>
+</body>
+</html>
